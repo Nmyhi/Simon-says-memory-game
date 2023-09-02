@@ -18,10 +18,19 @@ function newGame() {
     game.playerMoves = [];
     game.currentGame = [];
     showScore();
+    addTurn();
+}
+
+function addTurn() {
+    game.playerMoves = [];
+    game.currentGame.push(game.choices[(Math.floor(Math.random() * game.choices.length))]);
+    //showTurns();
 }
 
 function showScore() {
     document.getElementById("score").innerText = game.score;
 }
 
-module.exports = { newGame, game, showScore };
+
+
+module.exports = { newGame, game, showScore, addTurn };
